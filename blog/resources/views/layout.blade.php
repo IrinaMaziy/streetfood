@@ -22,6 +22,7 @@
     @yield('content')
     <!-- #content -->
 @include('footer-v1-static-content')
+@include('subscribe')
 
 @include('footer')
 
