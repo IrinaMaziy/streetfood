@@ -32,7 +32,7 @@
                             </div>
                             <!-- /.product-images-wrapper -->                        <!-- /.product-images-wrapper -->
                             <div class="summary entry-summary">
-                                <h1 itemprop="name" class="product_title entry-title">Hawaii Vegetarian Pizza<span class="food-type-icon"><i class="po po-veggie-icon"></i></span></h1>
+                                <h1 itemprop="name" class="product_title entry-title">{{$singleProduct->name}}<span class="food-type-icon"><i class="po po-veggie-icon"></i></span></h1>
                                 <div itemprop="description">
                                     <p>Mouth watering pepperoni, cabanossi, mushroom, capsicum, black olives and stretchy mozzarella, seasoned with garlic and oregano.</p>
                                 </div>

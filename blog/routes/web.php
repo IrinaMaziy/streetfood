@@ -17,9 +17,14 @@ Route::get('/', function () {
 
 Route::get('/products/{key}','\\'. \App\Http\Controllers\ProductsAction::class)->name('products');
 
-Route::get('/single-product', function () {
-	return view('pages.single-product-v1');
-})->name('single-product');
+Route::get('/cart/add/{id}', '\\'. \App\Http\Controllers\SingleProductAction::class)->name('add-to-cart');
+
+//Route::get('/cart/remove/{id}', '\\'. \App\Http\Controllers\SingleProductAction::class)->name('add-to-cart');
+
+
+
+Route::get('/cart', '\\'. \App\Http\Controllers\ShowCartAction::class)->name('show-cart');
+
 
 Route::get('/login-and-register', function () {
 	return view('pages.login-and-register');
