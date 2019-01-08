@@ -1,5 +1,6 @@
 <header id="masthead" class="site-header header-v1"  style="background-image: none; ">
     @inject('menus', 'App\Services\GetItemsForMenuService')
+
     <div class="col-full">
         <a class="skip-link screen-reader-text" href="#site-navigation">Skip to navigation</a>
         <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
@@ -106,7 +107,7 @@
                         <ul class="sub-menu">
                             <li>
                                 <a href="{{route('shopping-cart')}}" title="View your shopping cart">
-                                    <span class="count">2 items</span> <span class="amount">$50.00</span>
+                                    <span class="count">{{\Cart::getTotalQuantity()}}</span> <span class="amount">{{\Cart::getTotal()}}</span>
                                 </a>
                             </li>
                         </ul>

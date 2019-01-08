@@ -41,23 +41,23 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($items as $item)
+                                        @foreach(\Cart::getContent() as $item)
                                         <tr class="cart_item">
                                             <td class="product-remove">
-                                                <a href="#" class="remove" >&times;</a>
+                                                <a href="{{route('remove-from-cart', $item->id)}}" class="remove" >&times;</a>
                                             </td>
                                             <td class="product-thumbnail">
                                                 <a href="single-product-v1.html">
-                                                    <img width="180" height="180" src="{{$item->product->image}}" alt=""/>
+                                                  <img width="180" height="180" src="{{$item->attributes->image}}" alt=""/>
                                                 </a>
                                             </td>
                                             <td class="product-name" data-title="Product">
-                                                <a href="single-product-v1.html">{{$item->product->name}}</a>
+                                                <a href="single-product-v1.html">{{$item->name}}</a>
                                                 <dl class="variation">
                                                     <dt class="variation-PickSizespanclasswoocommerce-Price-amountamountspanclasswoocommerce-Price-currencySymbol36span2590span">Pick Size :
                                                     </dt>
                                                     <dd class="variation-PickSizespanclasswoocommerce-Price-amountamountspanclasswoocommerce-Price-currencySymbol36span2590span">
-                                                        <p>{{$item->size}} {{$item->dimension}}</p>
+                                                        <p>{{$item->attributes->size}} {{$item->attributes->dimension}}</p>
                                                     </dd>
                                                 </dl>
                                             </td>
@@ -68,12 +68,12 @@
                                                 <div class="qty-btn">
                                                     <label>Quantity</label>
                                                     <div class="quantity">
-                                                        <input type="number" value="1" title="Qty" class="input-text qty text"/>
+                                                        <input type="number" name="item[{{$item->id}}]" value="{{$item->quantity}}" title="Qty" class="input-text qty text"/>
                                                     </div>
                                                 </div>
                                             </td>
                                             <td class="product-subtotal" data-title="Total">
-                                                <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#36;</span>{{$item->price}}</span>
+                                                <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#36;</span>{{$item->getPriceSum()}}</span>
                                             </td>
                                         </tr>
                                         @endforeach
@@ -108,7 +108,7 @@
                                             <tr class="order-total">
                                                 <th>Total</th>
                                                 <td data-title="Total">
-                                                    <strong><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#36;</span>{{$total}}</span></strong>
+                                                    <strong><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#36;</span>{{\Cart::getTotal()}}</span></strong>
                                                 </td>
                                             </tr>
                                         </table>

@@ -67,7 +67,7 @@
 
                         <!-- /.products -->
 
-                        <!-- /.products -->--}}
+                        <!-- /.products -->
                     </ul>
                 </div>
 

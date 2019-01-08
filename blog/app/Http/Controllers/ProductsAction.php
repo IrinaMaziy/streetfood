@@ -18,7 +18,7 @@ class ProductsAction extends Controller
     {
     	$menu = Menu::where('key', $key)->first();
     	//$products = Product::withoutTrashed()->paginate(8);
-		$products = $menu->product()->paginate(4);
+		$products = $menu->product()->paginate(6);
 		return view('pages.shop-grid-4-column', ['products' => $products]);
 		//dd($products);
     }

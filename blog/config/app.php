@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'ru',
 
     /*
     |--------------------------------------------------------------------------
@@ -93,7 +93,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'ru',
 
     /*
     |--------------------------------------------------------------------------
@@ -135,7 +135,8 @@ return [
     */
 
     'providers' => [
-		Darryldecode\Cart\CartServiceProvider::class,
+
+		JeroenNoten\LaravelAdminLte\ServiceProvider::class,
 
         /*
          * Laravel Framework Service Providers...
@@ -175,6 +176,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+		Darryldecode\Cart\CartServiceProvider::class,
 
 
     ],
@@ -192,7 +194,6 @@ return [
 
     'aliases' => [
 
-		'Cart' => Darryldecode\Cart\Facades\CartFacade::class,
 
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
@@ -227,7 +228,9 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+		'Cart' => Darryldecode\Cart\Facades\CartFacade::class,
 
-    ],
+
+	],
 
 ];
